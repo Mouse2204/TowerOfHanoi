@@ -1,0 +1,22 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+void chuyen(int n, char start, char middle, char final) {
+	if (n == 1) {
+		cout << start << "-->" << final << endl;
+		return;
+	}
+		chuyen(n - 1, start, final, middle);
+		chuyen(n, start, middle, final);
+		chuyen(n - 1, middle, start, final);
+	}
+int main(){
+	int n;
+	double sum;
+	cout << "Enter the move n=";
+	cin >> n;
+	chuyen(n, 'A', 'B', 'C');
+	sum = pow(2, n) - 1;
+	cout << "Total of move=" << sum << endl;
+	return 0;
+}
